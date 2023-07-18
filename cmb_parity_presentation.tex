@@ -66,12 +66,15 @@
         \frametitle{Intitial Calculations}
         Plugging this back into the previous equation we get the key relation:
         \begin{equation}
-        \boxed{\zeta_{\Lambda ''}(x_0, x_1, x_2, x_3) = \int d \hat x \sum_{\Lambda} \zeta_{\Lambda}(r_1, r_2, r_3) \mathcal P_{\Lambda}(\hat r_1, \hat r_2, \hat r_3) P^*_{\Lambda ''}(\hat x_0, \hat x_1, \hat x_2, \hat x_3)}
+            \label{main_eq}
+            \boxed{\zeta_{\Lambda ''}(x_0, x_1, x_2, x_3) = \int d \hat x \sum_{\Lambda} \zeta_{\Lambda}(r_1, r_2, r_3) \mathcal P_{\Lambda}(\hat r_1, \hat r_2, \hat r_3) P^*_{\Lambda ''}(\hat x_0, \hat x_1, \hat x_2, \hat x_3)}
         \end{equation}
         Solving the integral on the right will
         give an expression for the coefficients of the correlation function centered 
         on earth in terms of the correlation function centered at $x_0$
     \end{frame}
+
+    \section{Solving for Coefficients}
 
     \begin{frame}
         \frametitle{Solving for $\vec r$ in terms of $\vec x$}
@@ -99,7 +102,74 @@
             \end{figure}
     \end{frame}
 
-\section{Solving for Coefficients}
+    \begin{frame}
+        \frametitle{Solving for $\vec r$ in terms of $\vec x$}
+        Similarly, we can solve for the angular dependence of $\vec r_i$\\
+        \begin{equation*}
+            \boxed{\theta_{ri} = \frac{\pi}{2} + \frac{\theta_i}{2}; \ \phi_{ri} = \phi_i}
+        \end{equation*}
+        \begin{figure}
+            \centering
+                \includegraphics[width=0.9\textwidth]{media/angle_conversion_diagram_1_ManimCE_v0.17.3.png}
+            \end{figure}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Solving for the coefficients}
+        Plugging those back into equation \ref{main_eq} we get:
+        \begin{align*}
+            &\zeta_{\Lambda ''}(x_0, x_1, x_2, x_3) =\\
+            &\int d \hat x \sum_{\Lambda} \zeta_{\Lambda}(\sqrt{2}d^*\sqrt{1-cos(\theta_1)}, \sqrt{2}d^*\sqrt{1-cos(\theta_2)}, \sqrt{2}d^*\sqrt{1-cos(\theta_3)})\\
+            &\times \mathcal P_{\Lambda}(\frac{\pi}{2} + \frac{\theta_1}{2}, \phi_1; \frac{\pi}{2} + \frac{\theta_2}{2}, \phi_2; \frac{\pi}{2} + \frac{\theta_3}{2}, \phi_3)\\
+            &\times \mathcal P^*_{\Lambda ''}(\theta_0, \phi_0; \theta_1, \phi_1; \theta_2, \phi_2; \theta_3, \phi_3)
+        \end{align*}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Different approaches}
+        \begin{itemize}
+            \item Directly solving the integral
+            \item Rotating the spherical harmonics
+            \item Using an addition formula
+            \begin{itemize}
+                \item Associated Legendre Polynomials
+                \item Jacobi Polynomials
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Directly solving the integral}
+        We can expand the integral using the definitions of the isotropic basis functions:
+        \begin{align*}
+            &\mathcal P_{l_1 l_2 l_3}(\hat r_1, \hat r_2, \hat r_3) = (-1)^{l_1+l_2+l_3} \sum_{m_1 m_1 m_3} 
+            \begin{pmatrix}
+            l_1 & l_2 & l_3\\
+            m_1 & m_2 & m_3
+            \end{pmatrix}\\
+            &\times
+            Y_{l_1 m_1}(\hat r_1)Y_{l_2 m_2}(\hat r_2)Y_{l_3 m_3}(\hat r_3)\\ &\\
+            &\mathcal P_{l_1 l_2 (l_{12}) l_3 l_4}(\hat r_1, \hat r_2, \hat r_3, \hat r_4) = (-1)^{l_1+l_2+l_3+l_4}\\
+            &\times \sum_{m_{12}} (-1)^{l_{12}-m_{12}}
+            \sum_{m_1 m_2 m_3 m_4}
+            \begin{pmatrix}
+                l_1 & l_2 & l_{12}\\
+                m_1 & m_2 & -m_{12}
+            \end{pmatrix}
+            \begin{pmatrix}
+                l_{12} & l_3 & l_4\\
+                m_{12} & m_3 & -m_4
+            \end{pmatrix}\\
+            &\times
+            Y_{l_1 m_1}(\hat r_1)Y_{l_2 m_2}(\hat r_2)Y_{l_3 m_3}(\hat r_3)Y_{l_4 m_4}(\hat r_4)
+        \end{align*}
+    \end{frame}
+
+
+
+
+
+
 
 
 
