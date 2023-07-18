@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1689700185 "c:/Users/micha/Documents/Research/UF/Latex Presentation/cmb_parity_presentation.tex" "cmb_parity_presentation.pdf" "cmb_parity_presentation" 1689700189 0
+["pdflatex"] 1689727487 "c:/Users/micha/Documents/Research/UF/Latex Presentation/cmb_parity_presentation.tex" "cmb_parity_presentation.pdf" "cmb_parity_presentation" 1689727491 0
   "C:/Users/micha/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1689602006 81088 29d6fa367ac022d1b69251d68c0742e6 ""
   "C:/Users/micha/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1686246803 23178959 931b0ab56b4c63649a4274207a1d4a98 ""
   "C:/Users/micha/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233955448 1004 54797486969f23fa377b128694d548df ""
@@ -28,6 +28,7 @@
   "C:/Users/micha/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1247596667 30251 6afa5cb1d0204815a708a080681d4674 ""
   "C:/Users/micha/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1247596667 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "C:/Users/micha/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1247596667 36741 0ee9e374ec3e30da87cdfb0ea3575226 ""
+  "C:/Users/micha/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1247596666 35469 dcf3a5f2fc1862f5952e3ee5eb1d98c4 ""
   "C:/Users/micha/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb" 1247596666 24457 5cbb7bdf209d5d1ce9892a9b80a307cc ""
   "C:/Users/micha/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb" 1247596666 24393 3b7eb51a67a0a62aec5849271bdb9c2e ""
   "C:/Users/micha/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb" 1247596667 24420 52dbb8e8aa0069a1b987309557f8d303 ""
@@ -203,12 +204,12 @@
   "C:/Users/micha/AppData/Local/Programs/MiKTeX/tex/latex/translator/translator.sty" 1622471510 8765 56d370785f0143111ff9898b5adfe08e ""
   "C:/Users/micha/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388494052 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/micha/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
-  "c:/Users/micha/Documents/Research/UF/Latex Presentation/cmb_parity_presentation.tex" 1689700184 7814 43f6c501da525f420d053315991d0ae2 ""
-  "cmb_parity_presentation.aux" 1689700188 3525 278e5e17aa67461a1b6d9551cd3c09da "pdflatex"
-  "cmb_parity_presentation.nav" 1689700188 1914 f5001027a8ebd9f9746751f59e30c4ce "pdflatex"
-  "cmb_parity_presentation.out" 1689700188 482 1e19dae5b2d36290f61d802eabbb3295 "pdflatex"
-  "cmb_parity_presentation.tex" 1689700184 7814 43f6c501da525f420d053315991d0ae2 ""
-  "cmb_parity_presentation.toc" 1689700188 175 a2167ff493c4e44b85cd3f8d50cc7003 "pdflatex"
+  "c:/Users/micha/Documents/Research/UF/Latex Presentation/cmb_parity_presentation.tex" 1689727487 11068 fb6ec9226e490c4cff1b32578d487a79 ""
+  "cmb_parity_presentation.aux" 1689727491 4038 e9425e1016de954ab005a199ac1f0ebd "pdflatex"
+  "cmb_parity_presentation.nav" 1689727491 2283 658628dd7d24c40552e38303b7bdb978 "pdflatex"
+  "cmb_parity_presentation.out" 1689727491 482 1e19dae5b2d36290f61d802eabbb3295 "pdflatex"
+  "cmb_parity_presentation.tex" 1689727487 11068 fb6ec9226e490c4cff1b32578d487a79 ""
+  "cmb_parity_presentation.toc" 1689727491 175 a2167ff493c4e44b85cd3f8d50cc7003 "pdflatex"
   "media/angle_conversion_diagram_1_ManimCE_v0.17.3.png" 1689687674 93459 0559d00b0b916e0fc732b6e716f18c45 ""
   "media/angle_conversion_diagram_2_ManimCE_v0.17.3.png" 1689687624 76906 d49f7dc92856b19bf3f39d3b138e8339 ""
   (generated)

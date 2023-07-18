@@ -147,8 +147,8 @@
             l_1 & l_2 & l_3\\
             m_1 & m_2 & m_3
             \end{pmatrix}\\
-            &\times
-            Y_{l_1 m_1}(\hat r_1)Y_{l_2 m_2}(\hat r_2)Y_{l_3 m_3}(\hat r_3)\\ &\\
+            &\times Y_{l_1 m_1}(\hat r_1)Y_{l_2 m_2}(\hat r_2)Y_{l_3 m_3}(\hat r_3)\\ 
+            &\\
             &\mathcal P_{l_1 l_2 (l_{12}) l_3 l_4}(\hat r_1, \hat r_2, \hat r_3, \hat r_4) = (-1)^{l_1+l_2+l_3+l_4}\\
             &\times \sum_{m_{12}} (-1)^{l_{12}-m_{12}}
             \sum_{m_1 m_2 m_3 m_4}
@@ -160,16 +160,76 @@
                 l_{12} & l_3 & l_4\\
                 m_{12} & m_3 & -m_4
             \end{pmatrix}\\
-            &\times
-            Y_{l_1 m_1}(\hat r_1)Y_{l_2 m_2}(\hat r_2)Y_{l_3 m_3}(\hat r_3)Y_{l_4 m_4}(\hat r_4)
+            &\times Y_{l_1 m_1}(\hat r_1)Y_{l_2 m_2}(\hat r_2)Y_{l_3 m_3}(\hat r_3)Y_{l_4 m_4}(\hat r_4)
         \end{align*}
     \end{frame}
 
+    \begin{frame}
+        \frametitle{Directly solving the integral}
+        Looking at just the angular dependent parts of the integral we have:
+        \begin{align*}
+            &\int d\theta_0 d\phi_0 d\theta_1 d\phi_1 d\theta_2 d\phi_2 d\theta_3 d\phi_3 sin(\theta_0) sin(\theta_1) sin(\theta_2) sin(\theta_3) \\
+            &\times Y_{l'_0 m'_0}(\theta_0, \phi_0) Y_{l'_1 m'_1}(\theta_1, \phi_1) Y_{l'_2 m'_2}(\theta_2, \phi_2) Y_{l'_3 m'_3}(\theta_3, \phi_3) \\
+            &\times Y_{l_1 m_1}(\frac{\theta_1}{2} + \frac{\pi}{2}, \phi_1) Y_{l_2 m_2}(\frac{\theta_2}{2} + \frac{\pi}{2}, \phi_2) Y_{l_3 m_3}(\frac{\theta_3}{2} + \frac{\pi}{2}, \phi_3)
+        \end{align*}
+    \end{frame}
 
+    \begin{frame}
+        \frametitle{Directly solving the integral}
+        We can further separate the integral into $\phi$ and $\theta$ dependent parts by using the following definition of 
+        sperical harmonics:
+        \begin{equation*}
+            Y_l^m (\theta, \phi) = \sqrt{\frac{2l + 1}{4 \pi} \frac{(l-m)!}{(l+m)!}} P_l^m (cos \theta) e^{im\phi}
+        \end{equation*}
+    \end{frame}
 
+    \begin{frame}
+        \frametitle{Solving the $\phi$ integral}
+        Looking at just the $\phi$ dependent terms:
+        \begin{align*}
+            &\int_0^{2\pi} d\phi_0 d\phi_1 d\phi_2 d\phi_3 e^{im'_0\phi_0}e^{im'_1\phi_1 + im_1\phi_1}e^{im'_2\phi_2 + im_2\phi_2}e^{im'_3\phi_3 + im_3\phi_3}\\
+            &= \left[\left.\frac{1}{im'_0}e^{im'_0\phi_0}\right|_0^{2\pi}\right] \left[\left.\frac{1}{i(m'_j + m_j)}e^{i(m'_j + m_j)\phi_j}\right|_0^{2\pi}\right]\ for\ j = 1,2,3
+        \end{align*}
+        Each of the above integrals will always be zero since all m's are integers unless $m'_0 = 0$ and $m'_j + m_j = 0$ in which case
+        each term becomes $2\pi$ so the total $\phi$ integral becomes:
+        \begin{equation*}
+            16\pi^4 \delta^K_{m'_0,0} \delta^K_{m_1,-m'_1} \delta^K_{m_2,-m'_2} \delta^K_{m_3,-m'_3}
+        \end{equation*}
+    \end{frame}
 
-
-
+    \begin{frame}{Examining the 3j symbols}
+        Our original expression had three 3j symbols:
+        \begin{equation*}
+            \begin{pmatrix}
+                l'_0 & l'_1 & l'_{01}\\
+                m'_0 & m'_1 & -m'_{01}
+            \end{pmatrix}
+            \begin{pmatrix}
+                l'_{01} & l'_2 & l'_{3}\\
+                m'_{01} & m'_2 & m'_{3}
+            \end{pmatrix}
+            \begin{pmatrix}
+                l_{1} & l_2 & l_{3}\\
+                m_{1} & m_2 & m_{3}
+            \end{pmatrix}
+        \end{equation*}
+        If we now plug in the constraints given by the delta functions from the $\phi$ integral we get:
+        \begin{equation*}
+            \begin{pmatrix}
+                l'_0 & l'_1 & l'_{01}\\
+                0 & -m_1 & -m'_{01}
+            \end{pmatrix}
+            \begin{pmatrix}
+                l'_{01} & l'_2 & l'_{3}\\
+                m'_{01} & -m_2 & -m_{3}
+            \end{pmatrix}
+            \begin{pmatrix}
+                l_{1} & l_2 & l_{3}\\
+                m_{1} & m_2 & m_{3}
+            \end{pmatrix}
+        \end{equation*}
+        Since the bottom elements of the 3j symbol must sum to zero, this adds the additional constraint that $m'_{01}=-m_1$
+    \end{frame}
 
 
 
