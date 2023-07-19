@@ -198,6 +198,7 @@
         Looking at just the angular dependent parts of the integral we have:
         \begin{align*}
             &\int d\theta_0 d\phi_0 d\theta_1 d\phi_1 d\theta_2 d\phi_2 d\theta_3 d\phi_3 sin(\theta_0) sin(\theta_1) sin(\theta_2) sin(\theta_3) \\
+            &\times \zeta_{\Lambda}(\sqrt{2}d^*\sqrt{1-cos(\theta_1)}, \sqrt{2}d^*\sqrt{1-cos(\theta_2)}, \sqrt{2}d^*\sqrt{1-cos(\theta_3)})\\
             &\times Y_{l'_0 m'_0}(\theta_0, \phi_0) Y_{l'_1 m'_1}(\theta_1, \phi_1) Y_{l'_2 m'_2}(\theta_2, \phi_2) Y_{l'_3 m'_3}(\theta_3, \phi_3) \\
             &\times Y_{l_1 m_1}(\frac{\theta_1}{2} + \frac{\pi}{2}, \phi_1) Y_{l_2 m_2}(\frac{\theta_2}{2} + \frac{\pi}{2}, \phi_2) Y_{l_3 m_3}(\frac{\theta_3}{2} + \frac{\pi}{2}, \phi_3)
         \end{align*}
@@ -263,9 +264,69 @@
     \begin{frame}{Solving the $\theta$ integral}
         Looking at the $\theta$ integral, we have:
         \begin{align*}
-            &\int_0^{2\pi} d\theta_0 d\theta_1 d\theta_2 d\theta_3 sin(\theta_0) sin(\theta_1) sin(\theta_2) sin(\theta_3)
+            &\int_0^{2\pi} d\theta_0 d\theta_1 d\theta_2 d\theta_3 sin(\theta_0) sin(\theta_1) sin(\theta_2) sin(\theta_3)\\
+            &\times \zeta_{\Lambda}(\sqrt{2}d^*\sqrt{1-cos(\theta_1)}, \sqrt{2}d^*\sqrt{1-cos(\theta_2)}, \sqrt{2}d^*\sqrt{1-cos(\theta_3)})\\
+            &\times P_{l'_0 m'_0}(cos \theta_0) P_{l'_1 m'_1}(cos \theta_1) P_{l'_2 m'_2}(cos \theta_2) P_{l'_3 m'_3}(cos \theta_3) \\
+            &\times P_{l_1 m_1}(cos (\frac{\theta_1}{2} + \frac{\pi}{2})) P_{l_2 m_2}(cos (\frac{\theta_2}{2} + \frac{\pi}{2})) P_{l_3 m_3}(cos (\frac{\theta_3}{2} + \frac{\pi}{2}))
         \end{align*}
     \end{frame}
 
+    \begin{frame}{Solving the $\theta$ integral}
+        Since $\zeta_{\Lambda}$ is an unknown function, we cannot integrate $\theta_1, \theta_2, \theta_3$ in this form.
+        To deal with this we can express $\zeta_{\Lambda}$ as an inverse Fourier Transform leading to:
+        \begin{align*}
+            &\zeta_{\Lambda}(\sqrt{2}d^*\sqrt{1-cos(\theta_1)}, \sqrt{2}d^*\sqrt{1-cos(\theta_2)}, \sqrt{2}d^*\sqrt{1-cos(\theta_3)})\\
+            &= \int dk_1 dk_2 dk_3 j_{l_1}(k_1r_1) j_{l_2}(k_2r_2) j_{l_3}(k_3r_3) \tilde \zeta_{\Lambda}(k1, k2, k3)
+        \end{align*}
+        Where $j_l$ are the spherical bessel functions of the first kind and $r_i = \sqrt{2}d^*\sqrt{1-cos \theta_i}$
+    \end{frame}
 
+    \begin{frame}{Rotating spherical harmonics}
+        Another approach to equation \ref{main_eq} is to think of $Y_l^m(\frac{\theta}{2} + \frac{\pi}{2})$ as a rotation of $Y_l^m(\theta)$ by an angle of $\frac{-\theta}{2} + \frac{\pi}{2}$\\
+        Using the theorem:
+        \begin{equation*}
+            Y_l^m(\theta', \phi') = \sum_{m'=-l}^l D_{m'm}^l(R) Y_l^{m'}(\theta, \phi)
+        \end{equation*}
+        Where $D_{m'm}^l(R)$ is a Wigner D-matrix of some rotation $R$.
+    \end{frame}
+
+    \begin{frame}{Rotating spherical harmonics}
+        Using the theorem:
+        \begin{equation*}
+            D_{ms}^l(\alpha, \beta, \phi) = (-1)^s \sqrt{\frac{4\pi}{2l + 1}} \ _{-s}Y_l^{*m}(\beta, \alpha)e^{-is\gamma}
+        \end{equation*}
+        we can rewrite the D-matrices as spin-weighted spherical harmonics. When doing this approach however, since we are rotating by $\beta = \frac{-\theta}{2} + \frac{\pi}{2}$
+        we still have an argument in terms of $\frac{\theta}{2}$
+    \end{frame}
+
+    \begin{frame}{Addition theorems}
+        A third approach was inspired by the spherical harmonic addition theorem:
+        \begin{equation*}
+            P_l(cos(\gamma)) = \frac{4\pi}{2l+1}\sum_{m=-l}^l (-1)^m Y_l^m(\theta_1, \phi_1) Y_l^m(\theta_2, \phi_2)
+        \end{equation*}
+        where $\gamma$ is the angle between the directions of the $(\theta_1, \phi_1)$ and $(\theta_2, \phi_2)$\\
+        If we could find a similar theorem for associated Legendre polynomials, we may be able change the form of $P_l^m(cos(\frac{\theta/2}{2} + \frac{\pi}{2}))$
+        into different form.
+    \end{frame}
+
+    \begin{frame}{Addition theorems}
+        B. E. Johnson (1964) proposed an addition theorem for associated Legendre polynomials, however, the domain of his function only includes real values greater than 0, which is
+        not necessarily true for $cos(\frac{\theta/2}{2} + \frac{\pi}{2})$\\
+        Similarly, Koornwinder (1973) gives an addition theorem for Jacobi polynomials, however, we don't believe associated Legendre polynomials are a special case of Jacobi polynomials
+    \end{frame}
+        
+    \section{Further Work}
+
+    \begin{frame}{Further Work}
+        \begin{itemize}
+            \item We assumed we can set $\hat x_0 = \hat z$, however, we then integrate over $\hat x_0$
+            \begin{itemize}
+                \item Define a rotation from absolute to relative coordiates $R\hat x_0 = \hat z$
+                \item How does this impact the integral?
+            \end{itemize}
+            \item How do we solve the $\theta$ integral?
+            \item Can we derive more information from the 3j symbols?
+        \end{itemize}
+
+    \end{frame}
 \end{document}
