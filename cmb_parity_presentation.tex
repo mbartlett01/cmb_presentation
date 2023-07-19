@@ -19,6 +19,35 @@
 \end{frame}
 
 \section{Overview of the Problem}
+\begin{frame}{Overview of the problem}
+    The goal is to determine whether or not parity asymmetry can be detected using the Cosmic Microwave Background.
+    To do so we are modelling the 4-point correlation function as a function of 4 points on a sphere, defined by vectors $\vec x_0, \vec x_1, \vec x_2, \vec x_3$
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\textwidth]{media/cmb_sphere_3_ManimCE_v0.17.3.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Overview of the problem}
+    We then define a set of vectors $\vec r_1, \vec r_2, \vec r_3$ where $\vec r_i = \vec x_i - \vec x_0$
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\textwidth]{media/cmb_sphere_4_ManimCE_v0.17.3.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Overview of the probelm}
+    If we then take two correlation functions:
+    \begin{equation*}
+        \zeta_E (\vec x_0, \vec x_1, \vec x_2, \vec x_3)
+    \end{equation*}
+    which is the correlation function of the vectors from the Earth the the CMB and
+    \begin{equation*}
+        \zeta_{x_0} (\vec r_1, \vec r_2, \vec r_3)
+    \end{equation*}
+    which is the correlation function centered on point $x_0$, then our goal is to write one as a function of the other
+    in order to help constrain the possible parity of both
+\end{frame}
 
 \section{Initial Calculations}
     \begin{frame}
@@ -231,6 +260,12 @@
         Since the bottom elements of the 3j symbol must sum to zero, this adds the additional constraint that $m'_{01}=-m_1$
     \end{frame}
 
+    \begin{frame}{Solving the $\theta$ integral}
+        Looking at the $\theta$ integral, we have:
+        \begin{align*}
+            &\int_0^{2\pi} d\theta_0 d\theta_1 d\theta_2 d\theta_3 sin(\theta_0) sin(\theta_1) sin(\theta_2) sin(\theta_3)
+        \end{align*}
+    \end{frame}
 
 
 \end{document}
